@@ -12035,6 +12035,14 @@ function draggable_sizes_chrome() {
       player_triangle: [84, 96],
     };
 
+    var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    $.each(alphabet, function (i, $i) {
+      $.draggable_sizes["letter_" + $i] = [30, 30];
+    });
+
+    for (var i = 0; i <= 9; i++) {
+      $.draggable_sizes["number_" + i] = [30, 30];
+    }
     if(window.innerWidth < 1024){
       $.draggable_sizes.blue_circle= [15, 15]
       $.draggable_sizes.vlctrafic_2d_blue= [15, 15]
@@ -12054,7 +12062,38 @@ function draggable_sizes_chrome() {
       $.draggable_sizes.player_circle_4 = [40, 30]
       $.draggable_sizes.player_circle_5 = [40, 30]
       $.draggable_sizes.player_circle_6 = [40, 30]
-    }else if(window.innerWidth > 1920){ 
+      $.each(alphabet, function (i, $i) {
+        $.draggable_sizes["letter_" + $i] = [15, 15];
+      });
+      for (var i = 0; i <= 9; i++) {
+        $.draggable_sizes["number_" + i] = [15, 15];
+      }
+    }else if(window.innerWidth > 1920 & window.innerWidth <= 2560){
+      $.draggable_sizes.blue_circle= [67, 67]
+      $.draggable_sizes.vlctrafic_2d_blue= [67, 67]
+      $.draggable_sizes.black_pole_2d= [22, 90]
+      $.draggable_sizes.overhead_mannequin_2d= [79, 47]
+      $.draggable_sizes.ladder_2d= [112, 261]
+      $.draggable_sizes.stand4= [79, 45]
+      $.draggable_sizes.boxD2= [135, 56]
+      $.draggable_sizes.tyre= [90, 83]
+      $.draggable_sizes.standq_2d_1_grey= [184, 79]
+      $.draggable_sizes.net_top_1= [304, 90]
+      $.draggable_sizes.football =  [60, 60]
+      $.draggable_sizes.cone_2d = [60, 60]
+      $.draggable_sizes.player_circle_1 = [100, 100]
+      $.draggable_sizes.player_circle_2 = [100, 100]
+      $.draggable_sizes.player_circle_3 = [100, 100]
+      $.draggable_sizes.player_circle_4 = [120, 100]
+      $.draggable_sizes.player_circle_5 = [120, 100]
+      $.draggable_sizes.player_circle_6 = [120, 100]
+      $.each(alphabet, function (i, $i) {
+        $.draggable_sizes["letter_" + $i] = [60, 60];
+      });
+      for (var i = 0; i <= 9; i++) {
+        $.draggable_sizes["number_" + i] = [60, 60];
+      }
+    }else if(window.innerWidth > 2560){ 
       $.draggable_sizes.blue_circle= [90, 90]
       $.draggable_sizes.vlctrafic_2d_blue= [90, 90]
       $.draggable_sizes.black_pole_2d= [30, 120]
@@ -12073,6 +12112,12 @@ function draggable_sizes_chrome() {
       $.draggable_sizes.player_circle_4 = [120, 100]
       $.draggable_sizes.player_circle_5 = [120, 100]
       $.draggable_sizes.player_circle_6 = [120, 100]
+      $.each(alphabet, function (i, $i) {
+        $.draggable_sizes["letter_" + $i] = [90, 90];
+      });
+      for (var i = 0; i <= 9; i++) {
+        $.draggable_sizes["number_" + i] = [90, 90];
+      }
     }
 
     for (var i = 1; i <= 55; i++) {
@@ -12119,14 +12164,9 @@ function draggable_sizes_chrome() {
       $.draggable_sizes["goalie_male_" + i] = [210, 160];
       $.draggable_sizes["goalie_female_" + i] = [210, 160];
     }
-    for (var i = 0; i <= 9; i++) {
-      $.draggable_sizes["number_" + i] = [30, 30];
-    }
+    
 
-    var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-    $.each(alphabet, function (i, $i) {
-      $.draggable_sizes["letter_" + $i] = [30, 30];
-    });
+    
     $.canvas.draggable = {
       defaults: {
         strokeStyle: "#ffffff",
@@ -20792,7 +20832,7 @@ function calculateRevY(y_percent) {
     (window.innerWidth < 1024) &
     ((window.innerHeight >= 1024) & (window.innerHeight < 1280))
   ) {
-    return parseFloat((y_percent * 311) / 100 + 290) -50; //--
+    return parseFloat((y_percent * 311) / 100 + 290) -30; //--
   } else if (
     (window.innerWidth >= 1024) &
     (window.innerWidth < 1280) &
@@ -20804,7 +20844,7 @@ function calculateRevY(y_percent) {
     (window.innerWidth < 1440) &
     ((window.innerHeight >= 768) & (window.innerHeight < 1024))
   ) {
-    return parseFloat((y_percent * 553) / 100 + 60); //--
+    return parseFloat((y_percent * 553) / 100 + 60) - 30; //--
   } else if (
     (window.innerWidth >= 1920) &
     (window.innerWidth < 2560) &
